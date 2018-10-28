@@ -13,10 +13,8 @@ before_script:
 
 Node 8:
   <<: *job_definition
-  image:
-    - node:8-alpine
+  image: node:8-alpine
 
 Node 10:
   <<: *job_definition
-  image:
-    - node:10-alpine
+  image: node:10-alpine
