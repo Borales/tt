@@ -1,4 +1,5 @@
 {
+  "name": "borales-test",
   "scripts": {
     "test": "jest"
   },
