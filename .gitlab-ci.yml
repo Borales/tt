@@ -1,5 +1,6 @@
 stages:
   - test
+  - rollback
 
 before_script:
   - apk add bash curl
@@ -19,3 +20,9 @@ Node 8:
 Node 10:
   <<: *job_definition
   image: node:10-alpine
+
+Delayed Rollback:
+  stage: rollback
+  script: echo 'Rolling back...'
+  when: delayed
+  start_in: 2 minutes
