@@ -28,3 +28,9 @@ Delayed Rollback:
   allow_failure: true
   when: delayed
   start_in: 20 minutes
+
+Manual:
+  stage: rollback
+  image: node:8-alpine
+  script: echo 'Manual...'
+  when: manual
