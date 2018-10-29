@@ -1,6 +1,5 @@
 stages:
   - test
-  - rollback
 
 before_script:
   - apk add bash curl
@@ -9,6 +8,10 @@ before_script:
 
 .job_template: &job_definition
   stage: test
+  cache:
+    key: '$NODE_VERSION-$CI_COMMIT_REF_SLUG'
+    paths:
+      - node_modules/
   script:
     - env
     - yarn --non-interactive 
