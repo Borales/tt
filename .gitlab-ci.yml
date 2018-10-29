@@ -1,5 +1,6 @@
 stages:
   - test
+  - build
 
 before_script:
   - apk add bash curl
@@ -25,16 +26,10 @@ Node 10:
   <<: *job_definition
   image: node:10-alpine
 
-# Delayed Rollback:
-#  stage: rollback
-#  image: node:8-alpine
-#  script: echo 'Rolling back...'
-#  allow_failure: true
-#  when: delayed
-#  start_in: 20 minutes
-
-#Manual:
-#  stage: rollback
-#  image: node:8-alpine
-#  script: echo 'Manual...'
-#  when: manual
+Build:
+  stage: build
+  image: node:8-alpine
+  script: echo 'Building...'
+  only:
+    variables:
+      - $NIGHTLY_BUILD
