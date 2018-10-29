@@ -10,6 +10,7 @@ before_script:
 .job_template: &job_definition
   stage: test
   script:
+    - env
     - yarn --non-interactive 
     - yarn test
 
