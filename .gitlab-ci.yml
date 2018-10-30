@@ -1,35 +1,9 @@
 stages:
-  - test
   - build
-
-before_script:
-  - apk add bash curl
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.10.1
-  - export PATH=$HOME/.yarn/bin:$PATH
-
-.job_template: &job_definition
-  stage: test
-  cache:
-    key: '$NODE_VERSION-$CI_COMMIT_REF_SLUG'
-    paths:
-      - node_modules/
-  script:
-    - env
-    - yarn --non-interactive 
-    - yarn test
-
-Node 8:
-  <<: *job_definition
-  image: node:8-alpine
-
-Node 10:
-  <<: *job_definition
-  image: node:10-alpine
 
 Build:
   stage: build
   image: node:8-alpine
-  script: echo 'Building...'
-  only:
-    variables:
-      - $NIGHTLY_BUILD
+  script:
+    - echo $NPM_TOKEN
+    - echo $NPM_UNPROTECTED
