@@ -17,7 +17,7 @@ script:
 
 jobs:
   include:
-    - stage: Nightly Release
+    - stage: Nightly Release from Form
       node_js: '10'
       script: echo "Deploying nightly builds to npm ..."
       deploy:
