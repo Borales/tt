@@ -23,4 +23,3 @@ jobs:
       deploy:
         provider: script
         script: echo "something"
-
