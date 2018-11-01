@@ -20,9 +20,5 @@ jobs:
   include:
     - stage: Nightly Release
       node_js: '10'
-      script: echo "Deploying nightly builds to npm ..."
-      deploy:
-        provider: script
-        script: echo "something"
-        on:
-          branch: master
+      if: branch IN (master, bar)
+      script: echo "Deploying nightly builds to npm ... ${VAL} ${VAL2} $VAL $VAL2"
