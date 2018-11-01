@@ -22,3 +22,7 @@ jobs:
       node_js: '10'
       if: branch IN (master, bar)
       script: echo "Deploying nightly builds to npm ... ${VAL} ${VAL2} $VAL $VAL2"
+    - stage: Foo branch
+      node_js: '10'
+      if: branch = foo
+      script: echo "foo"
