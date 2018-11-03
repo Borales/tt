@@ -1,4 +1,4 @@
-const = require('./index');
+const index = require('./index');
 
 describe('Index', () => {
   it('Dummy test', () => {
