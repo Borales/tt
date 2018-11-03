@@ -2,7 +2,7 @@
   "name": "b",
   "scripts": {
     "test": "jest",
-    "coverage": "codecov"
+    "coverage": "codecov -F b"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
