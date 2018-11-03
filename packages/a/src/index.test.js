@@ -5,7 +5,7 @@ describe('Index', () => {
     index();
     expect(true).toBe(true);
   });
-  
+
   it('Second test', () => {
     expect(false).toBe(false);
   });
