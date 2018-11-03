@@ -4,6 +4,11 @@
   "scripts": {
     "test": "jest"
   },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverageFrom": ["src/**.js"],
+    "collectCoverage": true
+  },
   "dependencies": {
     "react": "^16.6.0"
   },
