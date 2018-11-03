@@ -6,6 +6,7 @@
   },
   "jest": {
     "coverageDirectory": "./coverage/",
+    "collectCoverageFrom": ["./src"],
     "collectCoverage": true
   },
   "dependencies": {
