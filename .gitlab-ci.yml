@@ -1,9 +1,0 @@
-stages:
-  - build
-
-Build:
-  stage: build
-  image: node:8-alpine
-  script:
-    - echo $NPM_TOKEN
-    - echo $NPM_UNPROTECTED

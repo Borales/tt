@@ -1,6 +1,7 @@
 language: node_js
 
 node_js:
+  - '8'
   - '10'
 
 cache: yarn
@@ -14,14 +15,4 @@ install:
 
 script:
   - yarn test
-
-jobs:
-  include:
-    - stage: Nightly Release
-      node_js: '10'
-      script: echo "Deploying nightly builds to npm ..."
-      deploy:
-        provider: script
-        script: echo "something"
-        on:
-          branch: master
+  - yarn codecov
