@@ -1,6 +1,6 @@
 coverage:
   status:
-    package:
+    project:
       a:
         paths:
           - packages/a
