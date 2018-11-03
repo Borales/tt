@@ -9,3 +9,7 @@ module.exports.v = () => {
 module.exports.t = () => {
   return true;
 };
+
+module.exports.b = () => {
+  return true;
+};
