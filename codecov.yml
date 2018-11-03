@@ -1,0 +1,9 @@
+flags:
+  a:
+    paths:
+      - packages/a
+  b:
+    paths:
+      - packages/b
+
+comment: off
