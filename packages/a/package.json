@@ -2,7 +2,7 @@
   "name": "a",
   "scripts": {
     "test": "jest",
-    "coverage": "cat ./coverage/lcov.info | codacy-coverage"
+    "coverage1": "cat ./coverage/lcov.info | codacy-coverage -p packages/a/"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
