@@ -1,9 +1,6 @@
 {
   "name": "b",
-  "scripts": {
-    "test": "jest",
-    "coverage": "codecov"
-  },
+  "version": "1.0.0",
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverageFrom": ["src/**.js"],

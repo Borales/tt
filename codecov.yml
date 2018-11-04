@@ -1,6 +1,9 @@
 coverage:
   status:
     project:
+      default:
+        target: auto
+        base: pr
       a:
         paths:
           - packages/a
