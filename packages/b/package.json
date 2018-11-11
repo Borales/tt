@@ -1,6 +1,10 @@
 {
   "name": "b",
   "version": "1.0.0",
+  "scripts": {
+    "test": "jest",
+    "coverage": "cat ./coverage/lcov.info | codacy-coverage -p packages/b/"
+  },
   "jest": {
     "coverageDirectory": "./coverage/",
     "collectCoverageFrom": ["src/**.js"],
