@@ -1,5 +1,6 @@
 {
   "name": "a",
+  "version": "1.0.0",
   "scripts": {
     "test": "jest",
     "coverage": "cat ./coverage/lcov.info | codacy-coverage -p packages/a/"

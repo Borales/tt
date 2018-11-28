@@ -5,7 +5,3 @@ module.exports = () => {
 module.exports.v = () => {
   return false;
 };
-
-module.exports.t = () => {
-  return true;
-};

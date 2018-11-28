@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.0.5-canary.1",
   "scripts": {
-    "test": "lerna run test",
-    "coverage": "lerna run coverage"
+    "test": "lerna exec --concurrency 1 -- jest",
+    "coverage": "lerna exec -- codecov"
   },
   "dependencies": {
     "lerna": "3.4.3"

@@ -6,7 +6,7 @@ describe('Index', () => {
   });
 
   it('Second test', () => {
-    index.t();
+    index.v();
     expect(false).toBe(false);
   });
 });
